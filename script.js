@@ -1,4 +1,8 @@
 const word = document.querySelector('.word')
+let cursor = document.querySelector('.cursor')
+setInterval(() => {
+    cursor.classList.toggle('active')
+}, 500);
 
 let wordsArray = ['Student.', 'Delivery boy.', 'Plumber.', 'Boss.', 'Doctor.']
 

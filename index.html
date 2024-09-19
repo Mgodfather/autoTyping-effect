@@ -34,6 +34,18 @@
             font-weight: 600;
             color: rgb(242, 239, 239);
         }
+
+        .cursor {
+            display: inline-block;
+            height: 40px;
+            width: 5px;
+            background-color: rgba(233, 233, 233, 0.925);
+            vertical-align: text-top;
+            margin-left: -8px;
+        }
+        .cursor.active{
+            display: none;
+        }
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -42,7 +54,7 @@
     <main>
         <div>
             <p>
-                I want to become a- <span class="word"></span>
+                I want to become a- <span class="word"></span> <span class="cursor"></span>
             </p>
         </div>
     </main>
