@@ -11,39 +11,43 @@ let characterIndex = 0
 
 let reverseType = false
 let waitTyping = 0
+// autoType(3, 10, 100)
+function autoType(forwardTimingSpeed, stopTiming, delay) {
+    let  = 
 
-setInterval(() => {
-
-    if (waitTyping) {
-        waitTyping--
-        return
-    }
-
-    if (!reverseType) {
-        word.innerText += wordsArray[wordIndex][characterIndex]
-        characterIndex++
-        waitTyping = 2
-    } else {
-        word.innerText = word.innerText.slice(0, word.innerText.length - 1)
-        characterIndex--
-    }
-
-    if (characterIndex === wordsArray[wordIndex].length) {
-        reverseType = true
-        waitTyping = 6
-    }
-
-    if (word.innerText.length === 0 && reverseType) {
-        reverseType = false
-        wordIndex++
-        characterIndex = 0
-    }
-
-    if (wordIndex === wordsArray.length) {
-        wordIndex = 0
-    }
-
-}, 85);
+    setInterval(() => {
+        
+        if (waitTyping) {
+            waitTyping--
+            return
+        }
+    
+        if (!reverseType) {
+            word.innerText += wordsArray[wordIndex][characterIndex]
+            characterIndex++
+            waitTyping = forwardTimingSpeed
+        } else {
+            word.innerText = word.innerText.slice(0, word.innerText.length - 1)
+            characterIndex--
+        }
+    
+        if (characterIndex === wordsArray[wordIndex].length) {
+            reverseType = true
+            waitTyping = stopTiming
+        }
+    
+        if (word.innerText.length === 0 && reverseType) {
+            reverseType = false
+            wordIndex++
+            characterIndex = 0
+        }
+    
+        if (wordIndex === wordsArray.length) {
+            wordIndex = 0
+        }
+    
+    }, delay);
+}
 
 //let's understand how this (waitTyping)/(skipUpdate) is working==>
 
