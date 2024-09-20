@@ -2,7 +2,7 @@ const word = document.querySelector('.word')
 let cursor = document.querySelector('.cursor')
 setInterval(() => {
     cursor.classList.toggle('active')
-}, 500);
+}, 400);
 
 let wordsArray = ['Student.', 'Delivery boy.', 'Plumber.', 'Boss.', 'Doctor.']
 
@@ -11,9 +11,7 @@ let characterIndex = 0
 
 let reverseType = false
 let waitTyping = 0
-// autoType(3, 10, 100)
 function autoType(forwardTimingSpeed, stopTiming, delay) {
-    let  = 
 
     setInterval(() => {
         
@@ -48,6 +46,8 @@ function autoType(forwardTimingSpeed, stopTiming, delay) {
     
     }, delay);
 }
+autoType(2, 7, 100)
+
 
 //let's understand how this (waitTyping)/(skipUpdate) is working==>
 
